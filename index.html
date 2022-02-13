@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet"> 
+  
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Belly Button Biodiversity</title>
+  <link 
+    rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link 
+  rel ="stylesheet" 
+  href="static/css/style.css">
+</head>
+
+<body>
+  <nav class="navbar justify-content-center">
+    <button type="button" class="btn btn-dark"><a class="navbar-Home" href="index.html">Home page</a></button>
+    <button type="button" class="btn btn-dark" onClick="document.getElementById('sample-metadata').scrollIntoView();">Demographic Info</button>
+    <button type="button" class="btn btn-dark" onClick="document.getElementById('bar').scrollIntoView();">Bar Graph</button>
+    <button type="button" class="btn btn-dark" onClick="document.getElementById('gauge').scrollIntoView();">gauge</button>
+    <button type="button" class="btn btn-dark" onClick="document.getElementById('bubble').scrollIntoView();">Bubble Gauge</button>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Belly Button Biodiversity Dashboard</h1>
+        <p>Use the interactive charts below to explore the dataset</p>
+        <img src="https://istanbulpost.com.tr/wp-content/uploads/2019/09/gutbacteria.jpg" alt="Bacteria under a microscope">
+        <p>Roza's panel for demographic information about the becterial content of belly button lent. The information is avalible via the console.log and github repo (</p>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-2">
+          <div class="well">
+          <h5>Test Subject ID No.:</h5>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body center"></div>
+        </div>
+      </div>
+
+      <div class="col-md-5 bar-graph center">
+        <div id="bar"></div>
+        <h4>This graph Shows the 10 most present types of Bacteria from a single Belly Button sample.</h4>
+      </div>
+      <div class="col-md-5 center">
+        <div id="gauge"></div>
+        <h4>This gauge shows us how many time the sample donor scrub their belly button.</h4>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-12 center">
+        <div id="bubble"></div>
+        <h4>This graph shows bacteria culture by sample OTUID and shows amount present by circumference of circle node.</h4>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="./JS/charts.js"></script>
+  <script src="./JS/clicks_navbar.js"></script>
+
+
+</body>
+
+</html>
